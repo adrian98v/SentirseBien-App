@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">Sentirse Bien Spa</string>
+    <string name="title_activity_main">Sentirse Bien Spa</string>
+    <string name="package_name">sentirsebien.spa</string>
+    <string name="custom_url_scheme">sentirsebien.spa</string>
+</resources>
