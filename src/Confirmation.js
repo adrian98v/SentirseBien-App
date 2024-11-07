@@ -36,8 +36,6 @@ function Successful(){
         
     }
 
-
-
     
 
     
@@ -57,8 +55,8 @@ function Successful(){
         <div className='confirmation_buttons'>
             <button className='pay_button' onClick={async()=>{
                 await saveInfo()
-                history('/opcionPago')
-                }}>Pagar ahora</button>
+                history('/opcionPagoDescuento')
+                }}>Pagar ahora con 10% de DESCUENTO</button>
             <button className='successful_button' onClick={()=>{history('/')}}>Volver</button> 
         </div>
         

@@ -25,6 +25,7 @@ function SidebarMenu() {
                     <nav className="menu-opciones">
                         <Link to="/clientes" onClick={toggleMenu}>Inicio</Link>
                         <Link to="/reservasClientes" onClick={toggleMenu}>Reservas</Link>
+                        <Link to="/noticias" onClick={toggleMenu}>Promociones</Link>
                     </nav>
                 </div>
             )}

@@ -1,11 +1,10 @@
 .successful_payment_container{
-    min-width: 30em;
+    min-width: 28em;
     width: 60vw;
     background-color: white;
     margin: 0 auto;
     height: 25em;
-    padding-right: 0;
-    padding-left: 0;
+
     margin-top: 2em;
     text-align: center;
 }

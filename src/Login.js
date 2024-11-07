@@ -34,11 +34,14 @@ function Login() {
                 if (storedEmail === email) {
                     // Redireccionar según el rol del usuario
                     if (email === "admin1@gmail.com") {
-                        history('/admin'); // Redirigir a la página de admin
+                        console.log("El email no coincide exactamente (case-sensitive).");
+                    setBoolLogin(true); // Mostrar error de inicio de sesión
                     } else if (["Masajista", "Belleza", "TratamientoCorporal", "TratamientoFacial"].includes(userRole)) {
-                        history('/profesionales'); // Redirigir a la página de profesionales
+                        console.log("El email no coincide exactamente (case-sensitive).");
+                    setBoolLogin(true); // Mostrar error de inicio de sesión
                     } else if (userRole === "Secretaria") {
-                        history('/secretaria'); // Redirigir a la página de secretaria
+                        console.log("El email no coincide exactamente (case-sensitive).");
+                    setBoolLogin(true); // Mostrar error de inicio de sesión
                     }  else if (userRole === "user") {
                     history('/clientes'); // Redirigir a la página de cliente
                     } else {

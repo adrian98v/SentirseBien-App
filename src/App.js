@@ -1,5 +1,6 @@
 import './App.css';
 import Header from './Header.js';
+import HeaderCliente from './HeaderCliente.jsx'
 import Citas from './Citas.js';
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import { createContext, useEffect, useState } from 'react';
@@ -30,6 +31,8 @@ import ClienteReservas from './cliente-componentes-paginas/ClienteReservas.jsx';
 import AdminIngresos from './admin-Pages/AdminIngresosFecha.jsx';
 import Clientes from './Cliente.jsx';
 import PaymentOptions from './PaymentOpcion.js';
+import PaymentOptionsDiscount from './PaymentOpcionDescuento.js';
+import PaymentRedirect from './redirect.js'
 
 export const DataContext = createContext();
 
@@ -123,16 +126,16 @@ function App() {
       <Router>
         <div className="App">
           <Routes>
-            <Route path="/citas" element={<><Header /><Citas /></>} />
+            <Route path="/citas" element={<><HeaderCliente /><Citas /></>} />
             <Route path="/paymentConfirmation" element={<><Header /><PaymentConfirmation /></>} />
             <Route path="/login" element={<Login />} />
-            <Route path="/" element={<><Header /><Home /></>} />
+            <Route path="/" element={<Login />} />
             <Route path="/servicios" element={<><Header /><Services /></>} />
             <Route path="/about" element={<><Header /><AcercaDe /></>} />
             <Route path="/contacto" element={<><Header /><Contacto /><Footer /><FooterSegundo /></>} />
-            <Route path="/noticias" element={<><Header /><Noticias /><Footer /><FooterSegundo /></>} />
+            <Route path="/noticias" element={<><HeaderCliente /><Noticias /><Footer /><FooterSegundo /></>} />
             <Route path="/signup" element={<SignUp />} />
-            <Route path="/confirmation" element={<><Header /><Confirmation /></>} />
+            <Route path="/confirmation" element={<><HeaderCliente /><Confirmation /></>} />
 
             <Route path="/admin" element={<ProtectedRouteAdmin><Admin /></ProtectedRouteAdmin>} />
             <Route path="/comentarios" element={<ProtectedRouteAdmin><AdminComments /></ProtectedRouteAdmin>} />
@@ -148,6 +151,14 @@ function App() {
 
             <Route path="/opcionPago" element={
               <PaymentOptions/>
+            } />
+
+            <Route path="/opcionPagoDescuento" element={
+              <PaymentOptionsDiscount/>
+            } />
+
+            <Route path="/redirect" element={
+              <PaymentRedirect/>
             } />
 
             <Route path="/clientes" element={<ProtectedRouteCliente><Clientes /></ProtectedRouteCliente>} />

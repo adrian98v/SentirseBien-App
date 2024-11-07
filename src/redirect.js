@@ -1,16 +1,20 @@
 import React, { useEffect } from 'react';
 
-function PaymentRedirect() {
 
-    
+function PaymentRedirect() {
     useEffect(() => {
-        // Redirige al esquema personalizado
-        window.location.href = "myapp://paymentConfirmation";
+        // Intenta la redirección automática
+        const dir = "myapp://paymentConfirmation"
+        window.location.href = dir
     }, []);
 
     return (
         <div style={styles.container}>
             <p style={styles.text}>Redirigiendo, por favor espera...</p>
+            {/* Enlace de respaldo para redirección manual */}
+            <a href="myapp://paymentConfirmation" style={styles.link}>
+                Si no ocurre nada, toca aquí para continuar.
+            </a>
         </div>
     );
 }
@@ -18,6 +22,7 @@ function PaymentRedirect() {
 const styles = {
     container: {
         display: 'flex',
+        flexDirection: 'column',
         alignItems: 'center',
         justifyContent: 'center',
         height: '100vh',
@@ -27,6 +32,12 @@ const styles = {
         fontSize: '1.2em',
         color: '#555',
     },
+    link: {
+        marginTop: '1em',
+        fontSize: '1em',
+        color: '#0066cc',
+        textDecoration: 'underline',
+    }
 };
 
 export default PaymentRedirect;

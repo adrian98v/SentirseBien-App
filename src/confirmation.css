@@ -1,11 +1,11 @@
 .successful_payment_container{
     /* min-width: 20em; */
-    width: 60vw;
+    width: 55vw;
     background-color: white;
-    margin: 0 auto;
+    /* margin: 0 auto; */
     /* height: 25em; */
-    padding-right: 1.2em;
-    padding-left: 1.2em;
+    padding-right: 1em;
+    padding-left: 1em;
     margin-top: 2em;
     text-align: center;
 }
@@ -26,6 +26,7 @@
 
 .successful_payment_amount{
     padding-top: 0.5em;
+    font-size: 17px;
 }
 
 .successful_button{
@@ -80,3 +81,25 @@
     width: 40%;
 }
 
+@media (max-width: 600px) {
+    .successful_payment_container {
+        width: 90%; /* Cambia el ancho al 90% para pantallas pequeñas */
+        padding: 1em; /* Aumenta el padding si es necesario */
+    }
+
+    .successful_green_check {
+        max-width: 5em; /* Ajusta el tamaño de la imagen si es necesario */
+        width: 50%; /* Cambia el ancho de la imagen */
+    }
+
+    .successful_payment_p,
+    .successful_payment_amount,
+    .successful_button,
+    .pay_button {
+        font-size: 1.1em; /* Reduce el tamaño de fuente para pantallas más pequeñas */
+    }
+
+    .confirmation_buttons {
+        flex-direction: column; /* Asegúrate de que los botones se apilen en lugar de estar en línea */
+    }
+}

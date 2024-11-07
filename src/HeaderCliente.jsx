@@ -6,6 +6,7 @@ import { DataContext } from './App.js';
 import { signOut } from 'firebase/auth'
 import { auth } from './firebase.js';
 
+
 function Header() {
     const [menuOpen, setMenuOpen] = useState(false);
 
@@ -30,7 +31,8 @@ function Header() {
                 
                 <button onClick={() => { history('/citas'); setMenuOpen(!menuOpen) }}>RESERVAR CITAS </button>
                 <button onClick={() => {history('/clientes')}}>SECTOR CLIENTES </button>
-                
+                <button onClick={() => {history('/noticias')}}>PROMOCIONES </button>
+
 
             </div>
 
