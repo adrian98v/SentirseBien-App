@@ -41,22 +41,19 @@ form > span {
 
 .signup_button {
     width: 100%;
-    /* background-color: #f7cd5a; */
-    background: linear-gradient(#f7cd5a, #e2a13f);
-    border: 1px solid #a1681d;
+    background-color: #54b82d;
+    color: white;
+    border: 1px solid #fffdfb;
     height: 30px;
     margin-top: 20px;
     border-radius: 3px;
+    transition: background-color 0.5s ease;
+    transition: transform 0.5s ease;
 }
 
-.signup_button:active{
-    background: linear-gradient(#eeb854, #d39334);
-}
-
-.signup_button:disabled{
-    background: #cccccc;
-    color: #666666;
-    border: 1px solid #999999;
+.signup_button:hover{
+    transform:scale(1.05);
+    background-color: #54b82ddc;
 }
 
 .signup_mail_warning{

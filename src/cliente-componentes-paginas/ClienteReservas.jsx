@@ -70,8 +70,12 @@ function ClienteReservas() {
         // Agregar un borde al ticket
         doc.rect(5, 5, width - 10, height - 10);
     
-        // Guardar el PDF
-        doc.save(`comprobante_reserva_${reserva.id}.pdf`);
+        // Convertir el PDF a un Blob
+        const pdfBlob = doc.output("blob");
+    
+        // Crear un URL para el Blob y abrirlo en una nueva pestaña del navegador
+        const url = URL.createObjectURL(pdfBlob);
+        window.open(url, "_blank");
     };
     
 

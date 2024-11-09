@@ -9,9 +9,9 @@ import { db } from "./firebase.js"
 function PaymentOption(){
 
     const {servicio, metodoPago, setMetodoPago} = useContext(DataContext)
-
+    const [showDelayedButton, setShowDelayedButton] = useState(false);
     const [serviceLink, setServiceLink] = useState("")
-
+    const navigate = useNavigate(); // Define navigate usando el hook
 
 
     useEffect(()=>{
@@ -36,7 +36,12 @@ function PaymentOption(){
 
     }, [servicio])
 
-  
+    useEffect(() => {
+        const timer = setTimeout(() => {
+            setShowDelayedButton(true);
+        }, 15000);
+        return () => clearTimeout(timer);
+    }, []);
   
     return <div className='payment_container'>
 
@@ -62,7 +67,14 @@ function PaymentOption(){
                     
                 }}>Crédito</button>
                 
+
             </div>
+
+            {showDelayedButton && (
+                    <button className="delayedButton" onClick={() => {
+                        navigate('/paymentConfirmation'); // Redirigir a otra página
+                    }}>Continuar</button>
+                )}
         </div>
     </div>
 }
